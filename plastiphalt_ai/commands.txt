@@ -1,0 +1,17 @@
+Train RF:
+python -m plastiphalt_ai.classifiers.plastic_classifier --train dataset --model models/plastic_rf.joblib
+
+Train CNN:
+python -m plastiphalt_ai.classifiers.cnn_classifier --train dataset --model models/plastic_cnn.h5
+
+Predict with RF:
+python -m plastiphalt_ai.classifiers.plastic_classifier --predict sample.jpg --model models/plastic_rf.joblib
+
+Predict with CNN:
+python -m plastiphalt_ai.classifiers.cnn_classifier --predict sample.jpg --model models/plastic_cnn.h5
+
+Streamlit UI:
+streamlit run plastiphalt_ai/app.py
+
+Mix Designer (test in Python):
+python -m plastiphalt_ai.designer.optim_plastiphalt

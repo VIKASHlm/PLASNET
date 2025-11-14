@@ -1,0 +1,27 @@
+[
+  {
+    "id": "a1",
+    "label": "HDPE",
+    "confidence": 0.92
+  },
+  {
+    "id": "a2",
+    "label": "PP",
+    "confidence": 0.88
+  },
+  {
+    "id": "a3",
+    "label": "LDPE",
+    "confidence": 0.75
+  },
+  {
+    "id": "a4",
+    "label": "PVC",
+    "confidence": 0.99
+  },
+  {
+    "id": "a5",
+    "label": "PET",
+    "confidence": 0.65
+  }
+]

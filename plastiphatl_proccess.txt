@@ -1,0 +1,111 @@
+🌍 What is Plastiphalt?
+
+Plastiphalt = Plastic + Asphalt.
+It’s a sustainable road construction technique where waste plastics are blended into the asphalt mix to improve strength, durability, and reduce plastic pollution.
+
+Instead of burning or dumping plastic waste, shredded plastics are melted and coated on hot aggregates before bitumen is added. This enhances binding strength, reduces potholes, and improves road lifespan.
+
+🛠 How the Process Works (Step by Step)
+
+Plastic Collection & Sorting
+
+Plastics like HDPE, LDPE, PP, PET, PS are collected.
+
+PVC & Other toxic plastics are excluded (the code explicitly removes them).
+
+Plastic Shredding
+
+Plastics are shredded into small chips (~2–4 mm).
+
+This increases surface area for coating.
+
+Heating Aggregates
+
+Road aggregates (stone, gravel, sand) are heated to about 160–170°C (MIX_TEMP_C in your code).
+
+At this temperature, plastics melt but do not burn.
+
+Plastic Coating
+
+Shredded plastics are mixed with hot aggregates.
+
+The melted plastics coat the aggregate surface, making them water-resistant and improving binding.
+
+Adding Bitumen
+
+Hot bitumen (~160°C) is added to the plastic-coated aggregates.
+
+This creates Plastiphalt mix (bitumen + plastic-coated aggregate).
+
+Laying the Road
+
+The mix is laid and compacted like normal asphalt.
+
+The result: stronger, more durable, water-resistant roads.
+
+📊 How the Code Simulates This (Your suggest_mix function)
+
+Your Python code mimics the engineering process by:
+
+Plastic Weight Targeting
+
+Ensures 6–10% of bitumen weight is plastic (PLASTIC_PERCENT_RANGE = (0.06, 0.10)).
+
+Example: For 1000 kg bitumen, use 60–100 kg plastic.
+
+Plastic Allocation
+
+Different plastics (HDPE, LDPE, PP, PET, PS) are given weights based on road severity:
+
+High severity roads (high traffic, heavy loads) → More HDPE & PP (strong plastics).
+
+Low severity roads → More LDPE, PET (flexible plastics).
+
+Available Stock Constraint
+
+Only allocates from the actual plastics available (available_kg input).
+
+If there’s less plastic than required, it scales down proportionally.
+
+Aggregate-to-Bitumen Ratio
+
+Uses a standard ratio (default 10:1) → if 1000 kg bitumen, need 10,000 kg aggregate.
+
+Durability Score
+
+Combines:
+
+Plastic composition strength (comp_index)
+
+Traffic factor (traffic_adt)
+
+Severity factor (low/medium/high road stress)
+
+Climate penalty (very hot/cold climates reduce performance).
+
+→ Gives a score between 0 and 1 predicting road durability.
+
+Output
+
+Batch design (bitumen, aggregate, plastic allocation by type).
+
+Plastic % of bitumen.
+
+Recommended mix temperature (160–170°C).
+
+Expected durability score.
+
+Notes for operators.
+
+✅ Real-World Benefits
+
+Stronger roads (higher Marshall stability).
+
+Waterproofing (resists potholes during monsoon).
+
+Eco-friendly (reduces plastic waste).
+
+Cost savings (less bitumen needed, longer life).
+
+⚡ In short:
+Your project is a digital twin of the Plastiphalt process → it takes traffic, climate, road severity, and plastic availability, and designs the optimal mix for durable eco-friendly roads.
